@@ -1,51 +1,51 @@
-// =========================
+// ===================================
 // TYPING ANIMATION
-// =========================
+// ===================================
 
 const words = [
     "Web Developer",
-    "Web Designer",
     "Frontend Developer",
     "Firebase Developer",
-    "Creative Thinker"
+    "UI Designer",
+    "Problem Solver"
 ];
 
 let wordIndex = 0;
 let charIndex = 0;
-let isDeleting = false;
+let deleting = false;
 
-const typingElement = document.getElementById("typing");
+const typingText = document.getElementById("typing");
 
-function typeEffect() {
+function type() {
 
     const currentWord = words[wordIndex];
 
-    if (!isDeleting) {
+    if (!deleting) {
 
-        typingElement.textContent =
+        typingText.textContent =
             currentWord.substring(0, charIndex + 1);
 
         charIndex++;
 
         if (charIndex === currentWord.length) {
 
-            isDeleting = true;
+            deleting = true;
 
-            setTimeout(typeEffect, 1500);
+            setTimeout(type, 1500);
 
             return;
         }
 
     } else {
 
-        typingElement.textContent =
+        typingText.textContent =
             currentWord.substring(0, charIndex - 1);
 
         charIndex--;
 
         if (charIndex === 0) {
 
-            isDeleting = false;
+            deleting = false;
 
             wordIndex++;
 
@@ -55,107 +55,86 @@ function typeEffect() {
         }
     }
 
-    setTimeout(
-        typeEffect,
-        isDeleting ? 50 : 120
-    );
+    setTimeout(type, deleting ? 50 : 100);
 }
 
-typeEffect();
+if (typingText) {
+    type();
+}
 
-// =========================
+// ===================================
 // CUSTOM CURSOR
-// =========================
+// ===================================
 
-const cursor =
-document.querySelector(".cursor");
+const cursor = document.querySelector(".cursor");
 
-document.addEventListener(
-    "mousemove",
-    (e) => {
+if (cursor) {
 
-        cursor.style.left =
-            e.clientX + "px";
+    document.addEventListener("mousemove", (e) => {
 
-        cursor.style.top =
-            e.clientY + "px";
-    }
-);
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
 
-// =========================
-// CURSOR ENLARGE ON HOVER
-// =========================
+    });
 
-const hoverItems =
-document.querySelectorAll(
-    "a, button, .skill-card, .project-card"
-);
+    const hoverElements = document.querySelectorAll(
+        "a, button, .skill-card, .project-card, .social-card"
+    );
 
-hoverItems.forEach(item => {
+    hoverElements.forEach(el => {
 
-    item.addEventListener(
-        "mouseenter",
-        () => {
+        el.addEventListener("mouseenter", () => {
 
             cursor.style.width = "40px";
             cursor.style.height = "40px";
-
             cursor.style.background =
                 "rgba(0,229,255,.15)";
-        }
-    );
+        });
 
-    item.addEventListener(
-        "mouseleave",
-        () => {
+        el.addEventListener("mouseleave", () => {
 
             cursor.style.width = "20px";
             cursor.style.height = "20px";
+            cursor.style.background = "transparent";
+        });
 
-            cursor.style.background =
-                "transparent";
-        }
-    );
-});
+    });
 
-// =========================
+}
+
+// ===================================
 // COUNTER ANIMATION
-// =========================
+// ===================================
 
 const counters =
 document.querySelectorAll(".counter");
 
 const counterObserver =
-new IntersectionObserver(entries => {
+new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
 
         if (entry.isIntersecting) {
 
-            const counter =
-            entry.target;
+            const counter = entry.target;
 
             const target =
-            Number(
-                counter.getAttribute(
-                    "data-target"
-                )
-            );
+                parseInt(
+                    counter.getAttribute("data-target")
+                );
 
-            let count = 0;
+            let current = 0;
 
-            const speed =
-            target / 100;
+            const increment =
+                Math.ceil(target / 100);
 
-            const updateCounter =
-            () => {
+            const updateCounter = () => {
 
-                count += speed;
+                current += increment;
 
-                if (count < target) {
+                if (current < target) {
 
-                    counter.innerText =
-                    Math.floor(count);
+                    counter.innerText = current;
 
                     requestAnimationFrame(
                         updateCounter
@@ -163,50 +142,45 @@ new IntersectionObserver(entries => {
 
                 } else {
 
-                    counter.innerText =
-                    target + "+";
+                    counter.innerText = target + "+";
                 }
             };
 
             updateCounter();
 
-            counterObserver.unobserve(
-                counter
-            );
+            counterObserver.unobserve(counter);
         }
+
     });
 
-},{
-    threshold:0.5
+}, {
+    threshold: 0.5
 });
 
 counters.forEach(counter => {
-
     counterObserver.observe(counter);
 });
 
-// =========================
-// SCROLL REVEAL ANIMATION
-// =========================
+// ===================================
+// SCROLL REVEAL
+// ===================================
 
 const revealElements =
 document.querySelectorAll(
     ".glass-card, .skill-card, .project-card, .stat-card, .social-card"
 );
 
-revealElements.forEach(element => {
+revealElements.forEach(el => {
 
-    element.style.opacity = "0";
+    el.style.opacity = "0";
+    el.style.transform = "translateY(50px)";
+    el.style.transition =
+        "all .8s ease";
 
-    element.style.transform =
-        "translateY(60px)";
-
-    element.style.transition =
-        "all 0.8s ease";
 });
 
 const revealObserver =
-new IntersectionObserver(entries => {
+new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
 
@@ -217,20 +191,20 @@ new IntersectionObserver(entries => {
             entry.target.style.transform =
                 "translateY(0)";
         }
+
     });
 
-},{
-    threshold:0.2
+}, {
+    threshold: 0.2
 });
 
-revealElements.forEach(element => {
-
-    revealObserver.observe(element);
+revealElements.forEach(el => {
+    revealObserver.observe(el);
 });
 
-// =========================
-// NAVBAR ACTIVE LINK
-// =========================
+// ===================================
+// ACTIVE NAVBAR LINK
+// ===================================
 
 const sections =
 document.querySelectorAll("section");
@@ -238,120 +212,132 @@ document.querySelectorAll("section");
 const navLinks =
 document.querySelectorAll("nav ul li a");
 
-window.addEventListener(
-    "scroll",
-    () => {
+window.addEventListener("scroll", () => {
 
-        let current = "";
+    let currentSection = "";
 
-        sections.forEach(section => {
+    sections.forEach(section => {
 
-            const sectionTop =
+        const sectionTop =
             section.offsetTop - 150;
 
-            const sectionHeight =
+        const sectionHeight =
             section.clientHeight;
 
-            if (
-                pageYOffset >= sectionTop
-            ) {
+        if (
+            window.scrollY >= sectionTop
+        ) {
 
-                current =
+            currentSection =
                 section.getAttribute("id");
-            }
-        });
-
-        navLinks.forEach(link => {
-
-            link.classList.remove(
-                "active"
-            );
-
-            if (
-                link.getAttribute("href")
-                === "#" + current
-            ) {
-
-                link.classList.add(
-                    "active"
-                );
-            }
-        });
-    }
-);
-
-// =========================
-// PARALLAX EFFECT
-// =========================
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        const scrollY =
-        window.scrollY;
-
-        const shape1 =
-        document.querySelector(
-            ".shape1"
-        );
-
-        const shape2 =
-        document.querySelector(
-            ".shape2"
-        );
-
-        const shape3 =
-        document.querySelector(
-            ".shape3"
-        );
-
-        if(shape1){
-
-            shape1.style.transform =
-            `translateY(${scrollY * 0.15}px)`;
         }
 
-        if(shape2){
+    });
 
-            shape2.style.transform =
-            `translateY(${-scrollY * 0.12}px)`;
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (
+            link.getAttribute("href")
+            === "#" + currentSection
+        ) {
+
+            link.classList.add("active");
         }
 
-        if(shape3){
+    });
 
-            shape3.style.transform =
-            `translateY(${scrollY * 0.08}px)`;
-        }
-    }
-);
+});
 
-// =========================
+// ===================================
 // HERO FADE EFFECT
-// =========================
+// ===================================
 
-window.addEventListener(
-    "scroll",
-    () => {
+const heroContent =
+document.querySelector(".hero-content");
 
-        const hero =
-        document.querySelector(
-            ".hero-content"
-        );
+window.addEventListener("scroll", () => {
 
-        if(hero){
+    if (heroContent) {
 
-            hero.style.opacity =
-            1 - window.scrollY / 700;
-        }
+        heroContent.style.opacity =
+            1 - window.scrollY / 600;
     }
-);
 
-// =========================
+});
+
+// ===================================
+// PARALLAX GLOW SHAPES
+// ===================================
+
+window.addEventListener("scroll", () => {
+
+    const scroll = window.scrollY;
+
+    const shape1 =
+        document.querySelector(".shape1");
+
+    const shape2 =
+        document.querySelector(".shape2");
+
+    const shape3 =
+        document.querySelector(".shape3");
+
+    if (shape1) {
+        shape1.style.transform =
+            `translateY(${scroll * 0.15}px)`;
+    }
+
+    if (shape2) {
+        shape2.style.transform =
+            `translateY(${-scroll * 0.1}px)`;
+    }
+
+    if (shape3) {
+        shape3.style.transform =
+            `translateY(${scroll * 0.05}px)`;
+    }
+
+});
+
+// ===================================
+// SMOOTH SCROLL
+// ===================================
+
+document
+.querySelectorAll('a[href^="#"]')
+.forEach(anchor => {
+
+    anchor.addEventListener(
+        "click",
+        function (e) {
+
+            e.preventDefault();
+
+            document
+            .querySelector(
+                this.getAttribute("href")
+            )
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+    );
+
+});
+
+// ===================================
 // CONSOLE MESSAGE
-// =========================
+// ===================================
 
 console.log(
-"%cWelcome to Raj Patel's Portfolio",
-"color:#00e5ff;font-size:18px;font-weight:bold;"
+    "%c< Raj Patel />",
+    "color:#00e5ff;font-size:24px;font-weight:bold;"
+);
+
+console.log(
+    "%cWelcome to my portfolio 🚀",
+    "color:#58a6ff;font-size:14px;"
 );
