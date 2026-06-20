@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raj Patel | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:65px;
+    margin-bottom:10px;
+}
+
+.hero h1 span{
+    color:#38bdf8;
+}
+
+.hero p{
+    max-width:700px;
+    color:#cbd5e1;
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.btn{
+    text-decoration:none;
+    background:#38bdf8;
+    color:black;
+    padding:14px 28px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+section{
+    padding:90px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+    color:#38bdf8;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#38bdf8;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+}
+
+.skill{
+    background:#1e293b;
+    padding:20px;
+    text-align:center;
+    border-radius:12px;
+    font-weight:500;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.project{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+}
+
+.project h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin-bottom:20px;
+    color:#cbd5e1;
+}
+
+.contact-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.contact-links a{
+    text-decoration:none;
+    background:#38bdf8;
+    color:black;
+    padding:12px 20px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Raj Patel</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <h1>Hello, I'm <span>Raj Patel</span></h1>
+
+    <p>
+        Web Developer passionate about building responsive websites,
+        modern user interfaces, and Firebase-powered web applications.
+    </p>
+
+    <a href="#projects" class="btn">View My Work</a>
+
+</section>
+
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-grid">
+
+        <div class="card">
+            <h3>Who Am I?</h3>
+
+            <p>
+                I am a web developer focused on creating modern,
+                responsive and user-friendly websites. I enjoy turning
+                ideas into real digital products that provide value
+                and great user experiences.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>What I Do</h3>
+
+            <p>
+                ✔ Website Development<br><br>
+                ✔ Responsive Web Design<br><br>
+                ✔ Firebase Integration<br><br>
+                ✔ Front-End Development<br><br>
+                ✔ UI/UX Design<br><br>
+                ✔ Event & Business Websites
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill">HTML5</div>
+        <div class="skill">CSS3</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Firebase</div>
+        <div class="skill">Responsive Design</div>
+        <div class="skill">Web Hosting</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">Netlify</div>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <h3>Event Studio Website</h3>
+
+            <p>
+                A professional event management website showcasing
+                event services, galleries, customer engagement,
+                and responsive design.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Hotel Ordering System</h3>
+
+            <p>
+                A web-based hotel ordering platform that allows
+                customers to browse menus and place orders digitally.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Firebase Web Applications</h3>
+
+            <p>
+                Interactive applications using Firebase for
+                authentication, real-time databases, and cloud storage.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Responsive Website Designs</h3>
+
+            <p>
+                Mobile-friendly websites designed with modern UI,
+                fast loading performance, and clean layouts.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact">
+
+        <p>
+            Interested in working together or discussing a project?
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:yourmail@gmail.com">Email</a>
+
+            <a href="https://github.com/yourusername" target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://www.instagram.com/rajtechstudio" target="_blank">
+                Instagram
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Raj Patel | All Rights Reserved
+</footer>
+
+</body>
+</html>
