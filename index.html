@@ -1,72 +1,393 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raj Patel | Cyberpunk Portfolio</title>
-<link rel="stylesheet" href="style.css">
+
+<title>Raj Patel | Web Developer</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
 
-<div class="bg-glow"></div>
+<div class="cursor"></div>
+
+<div class="bg-shape shape1"></div>
+<div class="bg-shape shape2"></div>
+<div class="bg-shape shape3"></div>
+
+<!-- NAVBAR -->
 
 <nav>
-  <div class="logo">RAJTECHSTUDIO</div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+
+<div class="logo">
+RAJTECHSTUDIO
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#skills">Skills</a></li>
+
+<li><a href="#projects">Projects</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
 </nav>
 
-<section class="hero">
-  <h1>Raj Patel</h1>
-  <h2 id="typing"></h2>
-  <p>Building modern websites and digital experiences.</p>
-  <a href="#projects" class="btn">Explore Projects</a>
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+<div class="hero-content">
+
+<h1>
+Raj Patel
+</h1>
+
+<h2>
+<span id="typing"></span>
+</h2>
+
+<p>
+
+Building modern websites, responsive interfaces,
+and digital experiences with creativity and performance.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn">
+View Projects
+</a>
+
+<a href="#contact" class="btn secondary">
+Contact Me
+</a>
+
+</div>
+
+</div>
+
+<div class="scroll-indicator">
+<i class="fa-solid fa-chevron-down"></i>
+</div>
+
 </section>
+
+<!-- ABOUT -->
 
 <section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    Passionate web developer focused on responsive websites, Firebase apps,
-    Event Studio, and modern UI experiences.
-  </div>
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<div class="glass-card">
+
+<p>
+
+I am a passionate web developer focused on creating modern,
+responsive, and user-friendly websites.
+
+I enjoy turning ideas into real digital products that solve
+problems and deliver exceptional user experiences.
+
+</p>
+
+<br>
+
+<p>
+
+My primary interests include website development,
+front-end design, Firebase integration, UI/UX,
+and creating professional web solutions.
+
+</p>
+
+</div>
+
 </section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat-card">
+
+<h3 class="counter" data-target="4">
+0
+</h3>
+
+<p>
+Projects
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 class="counter" data-target="8">
+0
+</h3>
+
+<p>
+Skills
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>
+100%
+</h3>
+
+<p>
+Passion
+</p>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
 
 <section id="skills">
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="card">HTML</div>
-    <div class="card">CSS</div>
-    <div class="card">JavaScript</div>
-    <div class="card">Firebase</div>
-    <div class="card">GitHub</div>
-    <div class="card">Netlify</div>
-  </div>
+
+<h2 class="section-title">
+Skills
+</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+HTML5
+</div>
+
+<div class="skill-card">
+CSS3
+</div>
+
+<div class="skill-card">
+JavaScript
+</div>
+
+<div class="skill-card">
+Firebase
+</div>
+
+<div class="skill-card">
+GitHub
+</div>
+
+<div class="skill-card">
+Netlify
+</div>
+
+<div class="skill-card">
+Responsive Design
+</div>
+
+<div class="skill-card">
+UI Design
+</div>
+
+</div>
+
 </section>
+
+<!-- PROJECTS -->
 
 <section id="projects">
-  <h2>Projects</h2>
-  <div class="grid">
-    <div class="card"><h3>Event Studio</h3><p>Modern event management website.</p></div>
-    <div class="card"><h3>Hotel Ordering System</h3><p>Digital ordering platform.</p></div>
-    <div class="card"><h3>Responsive Web Designs</h3><p>Mobile-first websites.</p></div>
-  </div>
+
+<h2 class="section-title">
+Featured Projects
+</h2>
+
+<div class="projects-grid">
+
+<div class="project-card">
+
+<div class="project-image">
+
+<img src="assets/event-studio.jpg" alt="Event Studio">
+
+</div>
+
+<div class="project-content">
+
+<h3>
+Event Studio Website
+</h3>
+
+<p>
+
+Professional event management website
+with responsive design and modern UI.
+
+</p>
+
+<div class="project-buttons">
+
+<a href="#" class="btn-small">
+Live Demo
+</a>
+
+<a href="#" class="btn-small">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-image">
+
+<img src="assets/hotel-ordering.jpg" alt="Hotel Ordering">
+
+</div>
+
+<div class="project-content">
+
+<h3>
+Hotel Ordering System
+</h3>
+
+<p>
+
+Digital ordering platform allowing customers
+to browse menus and place orders online.
+
+</p>
+
+<div class="project-buttons">
+
+<a href="#" class="btn-small">
+Live Demo
+</a>
+
+<a href="#" class="btn-small">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-image">
+
+<img src="assets/portfolio.jpg" alt="Portfolio">
+
+</div>
+
+<div class="project-content">
+
+<h3>
+Personal Portfolio
+</h3>
+
+<p>
+
+Cyberpunk-inspired personal portfolio
+built using HTML, CSS, and JavaScript.
+
+</p>
+
+<div class="project-buttons">
+
+<a href="#" class="btn-small">
+Live Demo
+</a>
+
+<a href="#" class="btn-small">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+<!-- CONTACT -->
 
 <section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    GitHub: yourusername<br>
-    Instagram: rajtechstudio
-  </div>
+
+<h2 class="section-title">
+Contact
+</h2>
+
+<div class="contact-container">
+
+<a href="#" class="social-card">
+
+<i class="fab fa-github"></i>
+
+<span>GitHub</span>
+
+</a>
+
+<a href="#" class="social-card">
+
+<i class="fab fa-instagram"></i>
+
+<span>Instagram</span>
+
+</a>
+
+<a href="mailto:yourmail@gmail.com" class="social-card">
+
+<i class="fa-solid fa-envelope"></i>
+
+<span>Email</span>
+
+</a>
+
+</div>
+
 </section>
 
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+
+© 2026 Raj Patel | Built with HTML, CSS & JavaScript
+
+</p>
+
+</footer>
+
 <script src="script.js"></script>
+
 </body>
 </html>
