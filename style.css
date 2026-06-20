@@ -1,6 +1,89 @@
 /* =========================
    GLOBAL
 ========================= */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:120px 20px;
+}
+
+.terminal{
+    width:100%;
+    max-width:900px;
+    background:#0d1117;
+    border:1px solid #30363d;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 0 40px rgba(0,229,255,.2);
+}
+
+.terminal-header{
+    height:50px;
+    background:#161b22;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:0 20px;
+    color:#8b949e;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+}
+
+.red{
+    background:#ff5f57;
+}
+
+.yellow{
+    background:#ffbd2e;
+}
+
+.green{
+    background:#28c840;
+}
+
+.terminal-body{
+    padding:40px;
+    text-align:left;
+}
+
+.command{
+    color:#8b949e;
+    margin:10px 0;
+}
+
+.prompt{
+    color:#3fb950;
+}
+
+.terminal-body h1{
+    font-size:4rem;
+    color:#00e5ff;
+    text-shadow:0 0 20px #00e5ff;
+}
+
+.terminal-body h2{
+    color:#58a6ff;
+    margin:15px 0;
+}
+
+.tech-stack{
+    color:#c9d1d9;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
 
 *{
     margin:0;
