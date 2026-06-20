@@ -19,7 +19,13 @@ body{
     overflow-x:hidden;
     position:relative;
 }
-
+.hero-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
 /* =========================
    CUSTOM SCROLLBAR
 ========================= */
@@ -186,8 +192,11 @@ nav ul li a:hover{
 .hero-buttons{
     margin-top:40px;
     display:flex;
+    justify-content:center;
+    align-items:center;
     gap:20px;
     flex-wrap:wrap;
+    width:100%;
 }
 
 .btn{
